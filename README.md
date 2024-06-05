@@ -1,22 +1,22 @@
 <div align="center">
   <img src="src/images/logo.png" alt="Logo" width="600" height="150">
   <p align="center">
-    <b>The project implements the classic "Snake" game in Java using the Swing library.</b>
+    <h2><b>The project implements the classic "Snake" game in Java using the Swing library.</b></h2>
   </p>
 </div>
 
 ## About
+- Gameplay mechanics: the player controls the snake to eat fruits, with each fruit consumed increasing the length of the snake by one.
+
+- Every 3 points snake speed is increased by 20%, adding to the challenge and pace of the gameplay.
+
 - It features custom graphics for the snake, fruits, and user interface elements.
 
-- Input handling includes support for both arrow keys and numpad keys.
+- Input handling includes support for both arrow keys.
 
 - Scores are stored and retrieved from a text file named "Scores.txt".
 
 - The game utilizes threads to manage the main game logic and snake movement separately.
-
-- In terms of gameplay mechanics, the player controls the snake to eat fruits, with each fruit consumed increasing the length of the snake.
-
-- Notably, every 3 points scored result in a 20% increase in game speed, adding to the challenge and pace of the gameplay.
 
 <br />
 <p align="center">
