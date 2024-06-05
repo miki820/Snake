@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="src/images/logo.png" alt="Logo" width="600" height="200">
+  <img src="src/images/logo.png" alt="Logo" width="600" height="150">
   <p align="center">
     The project implements the classic "Snake" game in Java using the Swing library.
   </p>
@@ -20,5 +20,5 @@
 
 <br />
 <p align="center">
-  <img alt="image" height="500" src="https://github.com/szef-2002/Snake/assets/154281061/bff96eab-f7c7-4f48-bce0-6289e5a3b9f2"/>
+  <img alt="image" src="https://github.com/szef-2002/Snake/assets/154281061/bff96eab-f7c7-4f48-bce0-6289e5a3b9f2"/>
 </p>
