@@ -25,7 +25,7 @@ public class ScoreManager{
                 saveHighScore();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Problem with input/output with file");
         }
     }
 
@@ -44,11 +44,10 @@ public class ScoreManager{
             writer.write(Integer.toString(highScore));
             writer.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Problem with input/output with file");
         }
     }
 
-    // Get the current high score
     public int getHighScore() {
         return highScore;
     }

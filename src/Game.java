@@ -2,8 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.*;
-import java.util.Scanner;
 
 //Class for game logic
 public class Game extends JPanel implements KeyListener, Runnable {
@@ -12,7 +10,6 @@ public class Game extends JPanel implements KeyListener, Runnable {
     private Snake snake = new Snake();
     private Fruit fruit = new Fruit();
     public boolean end = false;
-    private final int bestScore = 0;
     private int score = 0;
     private final ScoreManager scoreManager;
     private int speed = 100;
@@ -104,7 +101,7 @@ public class Game extends JPanel implements KeyListener, Runnable {
             try {
                 Thread.sleep(speed);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException("Thread was interrupted");
             }
         }
     }
