@@ -1,4 +1,5 @@
-# Snake
+![logo](https://github.com/szef-2002/Snake/assets/154281061/9c42f5c5-af04-465a-8d8c-027ee0008bde)
+
 
 Implementation of the classic "Snake" game written in Java using the Swing library.
 The project features custom graphics, numpad imputs handling, file reading and writing for scores and 
