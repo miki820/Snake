@@ -5,6 +5,7 @@ import java.awt.event.KeyListener;
 import java.io.*;
 import java.util.Scanner;
 
+//Class for game logic
 public class Game extends JPanel implements KeyListener, Runnable {
 
     private final Board board = new Board();
@@ -13,12 +14,15 @@ public class Game extends JPanel implements KeyListener, Runnable {
     public boolean end = false;
     private final int bestScore = 0;
     private int score = 0;
-    private int highScore = 0;
+    private final ScoreManager scoreManager;
     private int speed = 100;
 
     public Game() {
         setPreferredSize(new Dimension(500, 500));
 
+        scoreManager = new ScoreManager();
+
+        //Starting the game
         new Thread(this).start();
         MyFrame.score.setText("Your Score: " + snake.getFruitsEaten());
 
@@ -80,8 +84,7 @@ public class Game extends JPanel implements KeyListener, Runnable {
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
             if (!end) {
-                startHighScore();
-                MyFrame.bestScore.setText("Best Score is: " + highScore);
+                MyFrame.bestScore.setText("Best Score is: " + scoreManager.getHighScore());
                 snake.moveSnake();
                 if (snake.eating(fruit)) {
                     fruit = new Fruit();
@@ -96,7 +99,7 @@ public class Game extends JPanel implements KeyListener, Runnable {
                 }
 
                 repaint();
-                endHighScore();
+                scoreManager.updateHighScore(score);
             }
             try {
                 Thread.sleep(speed);
@@ -113,39 +116,6 @@ public class Game extends JPanel implements KeyListener, Runnable {
         repaint();
         score = 0;
         speed = 100;
-    }
-
-    public void startHighScore() {
-        try {
-            File highScoreFile = new File("Scores.txt");
-            Scanner scanner = new Scanner(highScoreFile);
-            if (scanner.hasNextLine()) {
-                int highest = scanner.nextInt();
-                highScore = highest;
-            } else {
-                highScore = 0;
-                FileWriter writer = new FileWriter("Scores.txt");
-                writer.write(Integer.toString(highScore));
-                writer.close();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void endHighScore() {
-        try {
-            File highScoreFile = new File("Scores.txt");
-            if (score > highScore) {
-                highScore = score;
-                FileWriter writer = new FileWriter("Scores.txt");
-                writer.write(Integer.toString(highScore));
-                writer.close();
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     public void faster() {
