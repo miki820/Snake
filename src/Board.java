@@ -1,5 +1,6 @@
 import java.awt.*;
 
+//Class representing board
 public class Board {
     public static int width = 25;
     public static int height = 25;

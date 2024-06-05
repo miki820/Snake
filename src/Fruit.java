@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
+//Class representing fruit
 public class Fruit extends Component {
     private final ImageIcon fruit = new ImageIcon(Objects.requireNonNull(getClass().getResource("images/apple.png")));
 
