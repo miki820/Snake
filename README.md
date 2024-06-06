@@ -1,7 +1,7 @@
 <div align="center">
   <img src="src/images/logo.png" alt="Logo" width="600" height="150">
   <p align="center">
-    <h2><b>The project implements the classic "Snake" game in Java using the Swing library.</b></h2>
+    <h2><b>"Snake" game implementation in Java using the Swing library.</b></h2>
   </p>
 </div>
 
